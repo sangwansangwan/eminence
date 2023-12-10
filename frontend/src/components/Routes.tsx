@@ -4,7 +4,7 @@ import { useAppSelector } from '../common/hooks';
 import Product from './product/Product';
 
 export default function MainRoutes() {
-  const isAuthenticated = useAppSelector(state=>state.auth.token)
+  const isAuthenticated = useAppSelector(state=>state.auth.userId)
 
   return (
     <BrowserRouter>
@@ -12,13 +12,13 @@ export default function MainRoutes() {
         
         <Route
           path='/'
-          element= {isAuthenticated !== null ? <Navigate to={'/product'} />:<Home/>  
+          element= {isAuthenticated !== '' ? <Navigate to={'/product'} />:<Home/>  
         }
         />
         <Route
           path='/product'
           
-            element={isAuthenticated !== null ?  <Product />:<Navigate to={'/'} /> }
+            element={isAuthenticated !== '' ?  <Product />:<Navigate to={'/'} /> }
 
           
         />
