@@ -1,0 +1,137 @@
+.title {
+  position: absolute;
+  top: 52%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.price {
+  bottom: 32px;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.card-container {
+  margin-top: 30px;
+  align-items: start;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  width: 70%;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: 150%;
+}
+
+.card.opened {
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  transition: all 5s ease;
+}
+
+.card-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px;
+  transition: opacity 1s ease;
+}
+
+.card-img.loaded {
+  opacity: 1;
+}
+
+.img-place {
+  user-select: none;
+  position: absolute;
+  top: 0px;
+  height: 50%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.img-skeleton {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .card-container {
+    grid-template-columns: repeat(2, 42%);
+  }
+
+  .card:before {
+    padding-bottom: 100%;
+  }
+
+  .card:hover {
+    transform: inherit;
+    box-shadow: inherit;
+  }
+
+  .title {
+    position: absolute;
+    top: 20px;
+    margin-left: 20px;
+  }
+
+  .buy {
+    width: 80%;
+    height: 80px;
+    right: 50%;
+    transform: translateX(+50%);
+  }
+
+  /* .price {
+      position: absolute;
+      bottom: 120px;
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 32px;
+    } */
+
+  .card-img {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .img-place {
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(1, 90%);
+  }
+}

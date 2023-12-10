@@ -1,0 +1,46 @@
+/* UserPage.css */
+
+.user-page {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-info {
+    font-size: 16px;
+  }
+  
+  .logout-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
